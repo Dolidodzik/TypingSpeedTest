@@ -1,3 +1,36 @@
 .typing {
 
 }
+
+.text{
+  background-color: #131313;
+  border: none;
+  border-bottom: 4px solid #444;
+  font-size: 20px;
+  padding: 5px;
+  font-weight: 500;
+  height: 150px;
+  border: 2px solid #444 !important;
+}
+
+.typing > textarea, input{
+  background-color: #131313;
+  border: none;
+  border-bottom: 4px solid #444;
+  font-size: 20px;
+  padding: 5px;
+  color: inherit;
+  outline: none;
+  font-weight: 500;
+}
+
+.typing > input[type="submit"]{
+  border-bottom: 5px solid #999;
+  font-size: 30px;
+  background-color: inherit;
+}
+
+.typing{
+  font-size: 25px;
+  font-weight: 500;
+}
