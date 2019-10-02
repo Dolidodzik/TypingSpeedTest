@@ -9,12 +9,15 @@
   <div class="col-10 typing">
 
   <div class="col-12 mb-2 mt-5"> Your typing text </div>
-  <div name="name" rows="6" cols="80" class="col-12 text"></div>
+  <div name="name" class="col-12 text" rows="2">
+    <span v-for="(word, index) in typing_words_left">
+      {{ word }}
+    </span>
+  </div>
 
   <div class="col-12 mb-2 mt-5"> Type below: </div>
-  <textarea type="text" class="col-12 input"
-      min="10" max="9999">
-  </textarea>
+  <input type="text" class="col-12 input" v-model="current_user_text" @change="TextOnchange($event)"
+      min="10" max="9999"/>
 
   <input type="submit" value="Start typing!" class="input submit mt-5"/>
 

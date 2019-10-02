@@ -8,18 +8,30 @@ export default {
   data () {
     return {
       /* Text passed from settings component */
-      custom_text: "aoswjuiqariqw rqwrqworqwolr qwr qw rqw r qwr qw rqw rqwrqwrq wr qwr qw rqw r qwr qw rqw r qwr qw rqw qwrqwr",
+      custom_text: null,
       /* list of random words imported from /src/components/words.js */
       words: words,
       /* acctual words that user will type (provided by user using this.custom_text, or randomly generated using this.words) */
       typing_words: null,
+      /* Typing words left, that will be shown in div with overflow: hidden */
+      typing_words_left: null,
 
       /* Settings */
       typing_time: 30,
-      number_of_words: 50,
+      number_of_words: 10,
+
+      /* Current word index */
+      current_word_index: 0,
+
+      /* Current user input-text value */
+      current_user_text: "",
     }
   },
   computed: {
+
+    current_word: function(){
+      return this.typing_words[this.current_word_index];
+    }
 
   },
   mounted () {
@@ -34,9 +46,31 @@ export default {
         this.typing_words[i] = this.words[number_index];
       }
     }
-
+    this.typing_words_left = this.typing_words;
   },
   methods: {
-    
+
+    /* This function will be called on space */
+    next_word: function(){
+      this.typing_words_left.pop();
+      this.current_user_text = null;
+      this.current_word_index++;
+    },
+
+    /* input-text onchange handler */
+    TextOnchange: function(value){
+      /* If user pressed space, lets go for next word */
+      console.log("textonchage")
+      if(value == " "){
+        this.next_word();
+      }
+    }
+
+  },
+  watch: {
+    current_user_text: function(value){
+      this.TextOnchange(value)
+    }
   }
+
 }
