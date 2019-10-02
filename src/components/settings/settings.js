@@ -4,7 +4,7 @@ export default {
   props: [],
   data () {
     return {
-
+      custom_text: null
     }
   },
   computed: {
