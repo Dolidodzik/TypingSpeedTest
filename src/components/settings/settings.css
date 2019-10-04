@@ -20,7 +20,7 @@
 
 .settings-inputs > textarea{
   border: 2px solid #444 !important;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .settings-inputs > .submit{

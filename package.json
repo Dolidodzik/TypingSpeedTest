@@ -12,7 +12,8 @@
     "bootstrap-vue": "^2.0.2",
     "core-js": "^2.6.5",
     "vue": "^2.6.10",
-    "vue-generate-component": "^2.0.0"
+    "vue-generate-component": "^2.0.0",
+    "vuejs-countdown-timer": "^2.1.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",

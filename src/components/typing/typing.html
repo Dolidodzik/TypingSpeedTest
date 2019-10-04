@@ -17,7 +17,10 @@
 
   <div class="col-12 mb-2 mt-5"> Type below: </div>
   <input type="text" class="col-12 input" v-model="current_user_text" @change="TextOnchange($event)"
-      min="10" max="9999"/>
+    v-bind:style= "[is_current_input_correct ? {'color': 'inherit'} : {'color': 'red'}]" />
+
+
+  <div class="timer"> {{ typing_time-typed_seconds }} </div>
 
   <input type="submit" value="Start typing!" class="input submit mt-5"/>
 

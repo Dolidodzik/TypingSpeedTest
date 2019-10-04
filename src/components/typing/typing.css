@@ -1,6 +1,3 @@
-.typing {
-
-}
 
 .text{
   background-color: #131313;
@@ -38,4 +35,8 @@
 .typing{
   font-size: 25px;
   font-weight: 500;
+}
+
+.timer{
+  margin-top: 30px;
 }
