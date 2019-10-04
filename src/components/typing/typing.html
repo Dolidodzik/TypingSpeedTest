@@ -1,5 +1,5 @@
 <section class="typing row">
-  <h3 class="col-12 mb-5"> Typing Speed: </h3>
+  <h3 class="col-12 mb-5"> Typing Speed Test: </h3>
 
   <div class="text-to-rewrite">
 
@@ -16,7 +16,7 @@
   </div>
 
   <div class="col-12 mb-2 mt-5"> Type below: </div>
-  <input type="text" class="col-12 input" v-model="current_user_text" @change="TextOnchange($event)"
+  <input type="text" class="col-12 input" v-model="current_user_text" v-on:keyup="TextOnchange"
     v-bind:style= "[is_current_input_correct ? {'color': 'inherit'} : {'color': 'red'}]" />
 
 
