@@ -3,6 +3,7 @@
 
     <settings/>
     <typing/>
+    <end_screen/>
 
   </div>
 </template>
@@ -11,12 +12,14 @@
 
 import settings from './components/settings/index.vue';
 import typing from './components/typing/index.vue';
+import end_screen from './components/end_screen/index.vue';
 
 export default {
   name: 'app',
   components: {
     settings,
-    typing
+    typing,
+    end_screen,
   }
 }
 </script>
