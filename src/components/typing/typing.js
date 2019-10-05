@@ -144,10 +144,26 @@ export default {
       let cut_current_word = this.current_word.substring(0, user_text_length);
       console.log("cut curr word: "+cut_current_word)
       console.log("current text: "+this.current_user_text)
-      if(cut_current_word == this.current_user_text){
+
+      /* First check if inputs are empty, if so lets mark this.is_current_input_correct as true */
+      /* Check if input equals to cut_current_word */
+
+      //
+
+      if(!this.current_user_text){
         this.is_current_input_correct = true;
       }else{
-        this.is_current_input_correct = false;
+
+        if( this.current_user_text[this.current_user_text.length -1] == " " ){
+          this.is_current_input_correct = true;
+        }else{
+          if(cut_current_word == this.current_user_text){
+            this.is_current_input_correct = true;
+          }else{
+            this.is_current_input_correct = false;
+          }
+        }
+
       }
 
     },
