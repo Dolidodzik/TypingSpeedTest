@@ -9,6 +9,8 @@
   padding-top: 4px;
   border: 2px solid #444 !important;
   overflow: hidden !important;
+
+  margin-top: 30px;
 }
 
 .typing > input{
@@ -39,4 +41,8 @@
 
 .timer{
   margin-top: 30px;
+}
+
+.input-header{
+  padding-top: 20px;
 }

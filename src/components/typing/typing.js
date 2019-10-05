@@ -55,7 +55,7 @@ export default {
         backspaces_pressed: 0,
 
         /* just a copy of this.typing_words */
-        typing_words: 0,
+        typing_words_list: 0,
 
       }
 
@@ -102,7 +102,19 @@ export default {
     /* This function will be called on space */
     next_word: function(){
 
+      /* Incrementing this.typed_words */
+      this.ssdata.typed_words++;
 
+      /* Checking if word was typed incorrectly */
+      if(this.current_user_text){
+
+        /* Cutting last char of input, that is ALWAYS space here */
+        let real_user_input = this.current_user_text.slice(0, -1);
+
+        if(real_user_input != this.current_word){
+          this.ssdata.incorrectly_typed_words++;
+        }
+      }
 
       this.typing_words.shift();
       this.current_user_text = null;
@@ -120,8 +132,6 @@ export default {
 
       this.ssdata.actions++;
 
-      let value;
-
       /* If key is not defined, it means user pressed space */
       console.log(evt)
       if(evt){
@@ -129,7 +139,7 @@ export default {
           console.log("NEXTWORD TRIGGER")
           this.next_word();
         }else if(evt.key == "Backspace"){
-
+          this.ssdata.backspaces_pressed++;
         }else{
 
         }
@@ -182,7 +192,13 @@ export default {
 
     /* Function called when typing finished (when time is gone, or all of the text was typed) */
     finish: function(){
+
+      /* getting last piece of data before showing end screen */
+      this.ssdata.max_time = this.typing_time;
+      this.typed_in = this.typing_time - this.typed_seconds;
+
       console.log("FINISHING")
+      console.log(this.ssdata)
     },
 
     create_typing_words: function(){
@@ -196,13 +212,16 @@ export default {
         }
       }
       this.typing_words_left = this.typing_words;
+
+      this.ssdata.typing_words_list = this.typing_words;
+      this.ssdata.max_words = this.typing_words.length;
     }
 
   },
   watch: {
-    current_user_text: function(value){
+    /*current_user_text: function(value){
       this.TextOnchange(value)
-    }
+    }*/
   }
 
 }

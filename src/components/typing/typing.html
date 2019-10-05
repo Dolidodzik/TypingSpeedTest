@@ -15,14 +15,14 @@
     </span>
   </div>
 
-  <div class="col-12 mb-2 mt-5"> Type below: </div>
+  <div class="col-12 mb-2 mt-5 input-header"> Type below: </div>
   <input type="text" class="col-12 input" v-model="current_user_text" v-on:keyup="TextOnchange"
     v-bind:style= "[is_current_input_correct ? {'color': 'inherit'} : {'color': 'red'}]" />
 
 
   <div class="timer"> {{ typing_time-typed_seconds }} </div>
 
-  <input type="submit" value="Start typing!" class="input submit mt-5"/>
+  <!--<input type="submit" value="Start typing!" class="input submit mt-5"/>-->
 
   </div>
   <div class="col-1"></div>
