@@ -1,5 +1,4 @@
 import words from "../words.js"
-console.log(words)
 
 export default {
   name: 'typing',
@@ -18,7 +17,7 @@ export default {
 
       /* Settings */
       typing_time: 30,
-      number_of_words: 50,
+      number_of_words: 10,
       is_typing_started: false,
       typed_seconds: 0,
 
@@ -27,6 +26,9 @@ export default {
 
       /* Current user input-text value */
       current_user_text: "",
+
+      /* input text will be red when user typed incorrectly */
+      is_current_input_correct: true,
 
       /* Saved statictics data - this data will be used in next component, to display user details about his typing */
       ssdata: {
@@ -63,7 +65,7 @@ export default {
 
     current_word: function(){
 
-      let cur_word = "";
+      /*let cur_word = "";
       if(this.typing_words){
         cur_word = this.typing_words[this.current_word_index];
       }else{
@@ -71,7 +73,10 @@ export default {
         cur_word = this.typing_words[this.current_word_index];
       }
 
-      return cur_word;
+      return cur_word;*/
+
+      return this.typing_words[0]
+
     },
 
     /* This method creates styles for input */
@@ -79,35 +84,11 @@ export default {
       return styles
     },
 
-    /* Boolean that represents if user input is correct */
-    is_current_input_correct: {
-
-      get: function(){
-        return true;
-        let cut_current_word = this.current_word.substring(0, this.current_user_text.length);
-
-        if(cut_current_word == this.current_user_text){
-          return true;
-        }else{
-          return false;
-        }
-      },
-
-      set: function(){
-
-      }
-
-
-
-    }
-
   },
   mounted () {
 
     /* Creating typing text from random words, if custom_text wasn't provided */
     this.create_typing_words();
-
-    console.log(this.typing_words)
 
     /* Starting timer */
     this.$nextTick(function () {
@@ -120,7 +101,10 @@ export default {
 
     /* This function will be called on space */
     next_word: function(){
-      this.typing_words_left.pop();
+
+
+
+      this.typing_words.shift();
       this.current_user_text = null;
       this.current_word_index++;
       this.is_current_input_correct = true;
@@ -139,25 +123,38 @@ export default {
       let value;
 
       /* If key is not defined, it means user pressed space */
+      console.log(evt)
       if(evt){
-        value = evt.key;
-      }else{
-        value = " ";
+        if(evt.code == "Space"){
+          console.log("NEXTWORD TRIGGER")
+          this.next_word();
+        }else if(evt.key == "Backspace"){
+
+        }else{
+
+        }
       }
 
-      /* If user pressed space, lets go for next word */
-      if(value == " "){
-        this.next_word();
-      }else if(value == "Backspace"){
-        console.log("back")
-      }else{
-        console.log(value)
+      /* checking if app should change this.is_current_input_correct */
+      let user_text_length = 0;
+      if(this.current_user_text){
+        user_text_length = this.current_user_text.length
       }
+
+      let cut_current_word = this.current_word.substring(0, user_text_length);
+      console.log("cut curr word: "+cut_current_word)
+      console.log("current text: "+this.current_user_text)
+      if(cut_current_word == this.current_user_text){
+        this.is_current_input_correct = true;
+      }else{
+        this.is_current_input_correct = false;
+      }
+
     },
 
     /* If typing is started every second change timer number, and stop typing when time is gone */
     CountDown: function(){
-      
+
       if(this.is_typing_started){
         this.typed_seconds++;
         if(typed_seconds > this.typing_time){
