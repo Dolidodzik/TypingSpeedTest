@@ -130,6 +130,10 @@ export default {
     /* input-text onchange handler */
     TextOnchange: function(evt){
 
+      if(!this.is_typing_started){
+        this.is_typing_started=true;
+      }
+
       this.ssdata.actions++;
 
       /* If key is not defined, it means user pressed space */
@@ -183,7 +187,7 @@ export default {
 
       if(this.is_typing_started){
         this.typed_seconds++;
-        if(typed_seconds > this.typing_time){
+        if(this.typed_seconds > this.typing_time){
           this.finish();
         }
       }

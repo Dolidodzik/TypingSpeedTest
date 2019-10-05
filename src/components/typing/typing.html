@@ -11,7 +11,13 @@
   <div class="col-12 mb-2 mt-5"> Your typing text </div>
   <div name="name" class="col-12 text" rows="2">
     <span v-for="(word, index) in typing_words_left">
-      {{ word }}
+
+      <span v-if="index == 0" style="font-weight: 700; text-decoration: underline;">
+        {{ word }}
+      </span><span v-else>
+        {{ word }}
+      </span>
+
     </span>
   </div>
 

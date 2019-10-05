@@ -46,3 +46,7 @@
 .input-header{
   padding-top: 20px;
 }
+
+.word{
+  margin-right: 2px !important;
+}
