@@ -1,3 +1,27 @@
 .end-screen {
   margin-top: 350px;
+  padding-top: 60px;
+}
+
+.end-screen-header{
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+
+.stat{
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.spacer{
+  margin: 50px auto;
+  border-bottom: 2px solid #ccc;
+}
+
+.endscreen-link{
+  margin-top: 80px;
+  text-decoration: underline;
+  font-size: 24px;
+  font-weight: 500;
 }

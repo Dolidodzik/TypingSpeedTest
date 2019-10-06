@@ -15,5 +15,9 @@ export default {
   },
   methods: {
 
+    scroll_to_typing: function(){
+      console.log("JD")
+    }
+
   }
 }

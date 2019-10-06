@@ -20,7 +20,9 @@ export default {
     settings,
     typing,
     end_screen,
-  }
+  },
+  mounted () {
+  },
 }
 </script>
 

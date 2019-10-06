@@ -1,4 +1,36 @@
+<section class="end-screen" id="endscreen">
 
-<section class="end-screen">
-  x{{ssdata.max_time}}x
+
+
+  <header class="end-screen-header col-12"> Your typing results: </header>
+
+   <div class="stat col-12"> WPM (Words/Minute): {{ this.ssdata.typed_words / this.ssdata.typed_in * 60 }} </div>
+   <div class="stat col-12"> Accuracy: {{ this.ssdata.typed_words / this.ssdata.incorrectly_typed_words }}% </div>
+   <div class="stat col-12"> Total typed words: {{ this.ssdata.typed_words }} </div>
+   <div class="stat col-12"> Incorrectly typed words: {{ this.ssdata.incorrectly_typed_words }} </div>
+   <div class="stat col-12"> Key presses: {{ this.ssdata.actions }} </div>
+   <div class="stat col-12"> Backspace presses: {{ this.ssdata.backspaces_pressed }} </div>
+
+   <div class="col-1"></div>
+   <div class="spacer col-10"></div>
+   <div class="col-1"></div>
+
+   <div class="stat col-12"> You had {{ this.ssdata.max_words }} words to type, and you typed {{ this.ssdata.typed_words }} words </div>
+   <div class="stat col-12"> You had {{ this.ssdata.max_time }} seconds for typing, and you typed it in {{ this.ssdata.typed_in }} seconds </div>
+
+
+   <div class="endscreen-link" v-scroll-to="'#settings'"> Take me back to settings! </div>
+
+   <!--<div class="list-of-words mx-5">
+
+     <span v-for="(word, index) in ssdata.typing_words_list">
+
+       <span>
+         {{ word }}
+       </span>
+
+     </span>
+   </div>-->
+
+
 </section>

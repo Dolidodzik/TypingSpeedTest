@@ -1,14 +1,10 @@
-<section class="typing row">
-  <h3 class="col-12 mb-5"> Typing Speed Test: </h3>
-
-  <div class="text-to-rewrite">
-
-  </div>
+<section class="typing row" id="typing">
+  <h3 class="col-12"> Typing Speed Test: </h3>
 
   <div class="col-1"></div>
   <div class="col-10 typing">
 
-  <div class="col-12 mb-2 mt-5"> Your typing text </div>
+  <div class="col-12 mb-2"> Your typing text </div>
   <div name="name" class="col-12 text" rows="2">
     <span v-for="(word, index) in typing_words_left">
 
@@ -28,7 +24,7 @@
 
   <div class="timer"> {{ typing_time-typed_seconds }} </div>
 
-  <!--<input type="submit" value="Start typing!" class="input submit mt-5"/>-->
+  <div class="endscreen-link" v-scroll-to="'#endscreen'">Take me to results!</div>
 
   </div>
   <div class="col-1"></div>

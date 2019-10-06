@@ -37,6 +37,7 @@
 .typing{
   font-size: 25px;
   font-weight: 500;
+  padding-top: 100px;
 }
 
 .timer{
@@ -49,4 +50,9 @@
 
 .word{
   margin-right: 2px !important;
+}
+
+.endscreen-link{
+  margin-top: 50px;
+  text-decoration: underline;
 }

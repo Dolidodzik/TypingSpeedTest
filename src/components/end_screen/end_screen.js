@@ -1,11 +1,13 @@
 export default {
   name: 'end-screen',
-  components: {},
+  components: {
+
+  },
   props: [],
   data () {
     return {
       ssdata: {
-        
+
       }
     }
   },
@@ -13,7 +15,10 @@ export default {
 
   },
   mounted () {
-
+    this.$root.$on('typing-finished', data => {
+     console.log(data);
+     this.ssdata = data;
+    });
   },
   methods: {
 

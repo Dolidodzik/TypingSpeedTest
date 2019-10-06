@@ -1,4 +1,4 @@
-<section class="settings row">
+<section class="settings row" id="settings">
   <h1 class="mt-5 col-12"> Welcome to Typing Speed Test! </h1>
   <h3 class="mt-5 col-12"> In this application you are able check how fast can you type! </h3>
   <h3 class="mt-5 col-12"> Settings: </h3>
@@ -17,7 +17,8 @@
     <!--<div class="col-12 mb-2 mt-5"> Or your own custom text (if empty, random words will be choosen): </div>
       <textarea name="name" rows="8" cols="80" class="col-12 input" v-model="custom_text"></textarea>-->
 
-    <input type="submit" value="Start typing!" class="input submit mt-5"/>
+    <input type="submit" value="Start typing!" class="input submit mt-5"
+      v-on:click="scroll_to_typing()" v-scroll-to="'#typing'" />
 
   </div>
   <div class="col-1"></div>

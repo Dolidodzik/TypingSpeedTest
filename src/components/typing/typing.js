@@ -134,50 +134,46 @@ export default {
         this.is_typing_started=true;
       }
 
-      this.ssdata.actions++;
+      /* Run those things only if typing is started */
+      if(this.is_typing_started){
+        this.ssdata.actions++;
 
-      /* If key is not defined, it means user pressed space */
-      console.log(evt)
-      if(evt){
-        if(evt.code == "Space"){
-          console.log("NEXTWORD TRIGGER")
-          this.next_word();
-        }else if(evt.key == "Backspace"){
-          this.ssdata.backspaces_pressed++;
-        }else{
-
-        }
-      }
-
-      /* checking if app should change this.is_current_input_correct */
-      let user_text_length = 0;
-      if(this.current_user_text){
-        user_text_length = this.current_user_text.length
-      }
-
-      let cut_current_word = this.current_word.substring(0, user_text_length);
-      console.log("cut curr word: "+cut_current_word)
-      console.log("current text: "+this.current_user_text)
-
-      /* First check if inputs are empty, if so lets mark this.is_current_input_correct as true */
-      /* Check if input equals to cut_current_word */
-
-      //
-
-      if(!this.current_user_text){
-        this.is_current_input_correct = true;
-      }else{
-
-        if( this.current_user_text[this.current_user_text.length -1] == " " ){
-          this.is_current_input_correct = true;
-        }else{
-          if(cut_current_word == this.current_user_text){
-            this.is_current_input_correct = true;
+        /* If key is not defined, it means user pressed space */
+        if(evt){
+          if(evt.code == "Space"){
+            this.next_word();
+          }else if(evt.key == "Backspace"){
+            this.ssdata.backspaces_pressed++;
           }else{
-            this.is_current_input_correct = false;
+
           }
         }
 
+        /* checking if app should change this.is_current_input_correct */
+        let user_text_length = 0;
+        if(this.current_user_text){
+          user_text_length = this.current_user_text.length
+        }
+
+        let cut_current_word = this.current_word.substring(0, user_text_length);
+
+        /* First check if inputs are empty, if so lets mark this.is_current_input_correct as true */
+        if(!this.current_user_text){
+          this.is_current_input_correct = true;
+        }else{
+
+          if( this.current_user_text[this.current_user_text.length -1] == " " ){
+            this.is_current_input_correct = true;
+          }else{
+            /* Check if input equals to cut_current_word */
+            if(cut_current_word == this.current_user_text){
+              this.is_current_input_correct = true;
+            }else{
+              this.is_current_input_correct = false;
+            }
+          }
+
+        }
       }
 
     },
@@ -199,10 +195,13 @@ export default {
 
       /* getting last piece of data before showing end screen */
       this.ssdata.max_time = this.typing_time;
-      this.typed_in = this.typing_time - this.typed_seconds;
+      this.ssdata.typed_in = this.typed_seconds;
 
-      console.log("FINISHING")
+      /* Marking typing as finished */
+      this.is_typing_started = false;
       console.log(this.ssdata)
+      this.$root.$emit('typing-finished', this.ssdata);
+
     },
 
     create_typing_words: function(){
@@ -218,14 +217,11 @@ export default {
       this.typing_words_left = this.typing_words;
 
       this.ssdata.typing_words_list = this.typing_words;
+      console.log(this.ssdata)
       this.ssdata.max_words = this.typing_words.length;
     }
 
   },
-  watch: {
-    /*current_user_text: function(value){
-      this.TextOnchange(value)
-    }*/
-  }
+
 
 }
