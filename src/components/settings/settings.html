@@ -1,18 +1,18 @@
 <section class="settings row" id="settings">
-  <h1 class="mt-5 col-12"> Welcome to Typing Speed Test! </h1>
-  <h3 class="mt-5 col-12"> In this application you are able check how fast can you type! </h3>
-  <h3 class="mt-5 col-12"> Settings: </h3>
+  <h2 class="mt-5 col-12"> Welcome to Typing Speed Test! </h2>
+  <h4 class="mt-5 col-12"> In this application you are able check how fast can you type! </h4>
+  <h4 class="mt-5 col-12"> Settings: </h4>
 
   <div class="col-1"></div>
   <div class="col-10 mt-4 settings-inputs">
 
     <div class="col-12 mb-2"> Typing time (in seconds): </div>
-    <input type="number" class="col-12 input" value = "30"
-         min="1" max="9999"/>
+    <input type="number" class="col-12 input" value = "60"
+         min="1" max="9999" v-model="settings.number_of_seconds" />
 
     <div class="col-12 mb-2 mt-5"> Number of words: </div>
-      <input type="number" class="col-12 input" value="60"
-          min="10" max="9999"/>
+      <input type="number" class="col-12 input" value="10"
+          min="10" max="9999" v-model="settings.number_of_words" />
 
     <!--<div class="col-12 mb-2 mt-5"> Or your own custom text (if empty, random words will be choosen): </div>
       <textarea name="name" rows="8" cols="80" class="col-12 input" v-model="custom_text"></textarea>-->

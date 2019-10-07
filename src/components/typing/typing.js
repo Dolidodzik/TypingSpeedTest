@@ -16,8 +16,8 @@ export default {
       typing_words_left: null,
 
       /* Settings */
-      typing_time: 30,
-      number_of_words: 10,
+      typing_time: 0,
+      number_of_words: 0,
       is_typing_started: false,
       typed_seconds: 0,
 
@@ -29,6 +29,9 @@ export default {
 
       /* input text will be red when user typed incorrectly */
       is_current_input_correct: true,
+
+      /* Is typing finished, boolean - if true input will be disabled */
+      is_typing_finished: false,
 
       /* Saved statictics data - this data will be used in next component, to display user details about his typing */
       ssdata: {
@@ -64,19 +67,7 @@ export default {
   computed: {
 
     current_word: function(){
-
-      /*let cur_word = "";
-      if(this.typing_words){
-        cur_word = this.typing_words[this.current_word_index];
-      }else{
-        this.create_typing_words();
-        cur_word = this.typing_words[this.current_word_index];
-      }
-
-      return cur_word;*/
-
       return this.typing_words[0]
-
     },
 
     /* This method creates styles for input */
@@ -87,7 +78,7 @@ export default {
   },
   mounted () {
 
-    /* Creating typing text from random words, if custom_text wasn't provided */
+    /* Creating typing text from random words, (its just a dummy, before settings signal come) */
     this.create_typing_words();
 
     /* Starting timer */
@@ -96,6 +87,15 @@ export default {
         this.CountDown();
       },1000);
     })
+
+    /* When settings form is submitted lets generate word list with given settings, and set time to given  */
+    this.$root.$on('settings-submit', data => {
+     this.number_of_words =  data.number_of_words;
+     this.typing_time = data.number_of_seconds;
+     this.is_typing_finished = false;
+     this.typed_seconds = 0;
+     this.create_typing_words();
+    });
   },
   methods: {
 
@@ -183,7 +183,7 @@ export default {
 
       if(this.is_typing_started){
         this.typed_seconds++;
-        if(this.typed_seconds > this.typing_time){
+        if(this.typed_seconds >= this.typing_time){
           this.finish();
         }
       }
@@ -199,6 +199,7 @@ export default {
 
       /* Marking typing as finished */
       this.is_typing_started = false;
+      this.is_typing_finished = true;
       console.log(this.ssdata)
       this.$root.$emit('typing-finished', this.ssdata);
 

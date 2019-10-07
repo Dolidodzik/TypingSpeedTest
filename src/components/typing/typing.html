@@ -5,7 +5,11 @@
   <div class="col-10 typing">
 
   <div class="col-12 mb-2"> Your typing text </div>
-  <div name="name" class="col-12 text" rows="2">
+
+
+  <div name="name" class="col-12 text" rows="2"
+    v-bind:style= "[is_typing_finished ? {'border-color': '#c91d12'} : {'background-color': 'inherit'}]"
+  >
     <span v-for="(word, index) in typing_words_left">
 
       <span v-if="index == 0" style="font-weight: 700; text-decoration: underline;">
@@ -18,13 +22,21 @@
   </div>
 
   <div class="col-12 mb-2 mt-5 input-header"> Type below: </div>
-  <input type="text" class="col-12 input" v-model="current_user_text" v-on:keyup="TextOnchange"
-    v-bind:style= "[is_current_input_correct ? {'color': 'inherit'} : {'color': 'red'}]" />
+
+  <input
+    type="text"
+    class="col-12 input"
+    v-model="current_user_text"
+    v-on:keyup="TextOnchange"
+    v-bind:style= "[is_current_input_correct ? {'color': 'inherit'} : {'color': 'red'}],
+    [is_typing_finished ? {'border-color': '#c91d12'} : {'background-color': 'inherit'}]"
+    :disabled="is_typing_finished == 1"
+  />
 
 
   <div class="timer"> {{ typing_time-typed_seconds }} </div>
 
-  <div class="endscreen-link" v-scroll-to="'#endscreen'">Take me to results!</div>
+  <div class="endscreen-link" v-scroll-to="'#endscreen'">Take me to results! <br/>(If you finished typing) </div>
 
   </div>
   <div class="col-1"></div>

@@ -4,7 +4,15 @@ export default {
   props: [],
   data () {
     return {
-      custom_text: null
+
+      settings:{
+
+        /* Defult values */
+        number_of_words: 10,
+        number_of_seconds: 60,
+
+      }
+
     }
   },
   computed: {
@@ -16,7 +24,7 @@ export default {
   methods: {
 
     scroll_to_typing: function(){
-      console.log("JD")
+      this.$root.$emit('settings-submit', this.settings);
     }
 
   }
