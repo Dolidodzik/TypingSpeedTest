@@ -32,6 +32,7 @@
 
 .typing > input[type="text"]{
   padding: 10px;
+  background-color: #131313 !important;
 }
 
 .typing{
@@ -55,4 +56,31 @@
 .endscreen-link{
   margin-top: 50px;
   text-decoration: underline;
+  cursor: pointer;
+}
+
+
+/* For sm */
+@media only screen and (min-width: 576px) {
+  .text{
+    height: 130px;
+  }
+  .typing{
+    padding-top: 70px;
+  }
+  .input-header{
+    padding-bottom: 8px;
+  }
+}
+
+/* For md */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+ /* I guess theres nothing to change here at this moment */
+}
+
+/* For lg */
+@media only screen and (min-width: 992px){
+  .text{
+    font-size: 24px;
+  }
 }
