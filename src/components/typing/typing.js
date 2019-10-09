@@ -1,5 +1,6 @@
 import words from "../words.js"
-
+import radnomWords from "random-words"
+console.log(radnomWords)
 export default {
   name: 'typing',
   components: {},
@@ -176,8 +177,6 @@ export default {
         }
       }
 
-      console.log(this.is_current_input_correct)
-
     },
 
     /* If typing is started every second change timer number, and stop typing when time is gone */
@@ -211,16 +210,18 @@ export default {
       if(this.custom_text){
         this.typing_words = this.custom_text.split(" ");
       }else{
+        /* My own solution, that allows me custom words etc
         this.typing_words = [];
         for(let i=0; i < this.number_of_words; i++){
           let number_index = Math.floor(Math.random() * this.words.length);
-          this.typing_words[i] = this.words[number_index];
-        }
+          this.typing_words[i] = this.words[number_index]; */
+
+        /* Npm library solution (https://www.npmjs.com/package/random-words) */
+        this.typing_words = radnomWords(this.number_of_words)
       }
       this.typing_words_left = this.typing_words;
 
       this.ssdata.typing_words_list = this.typing_words;
-      console.log(this.ssdata)
       this.ssdata.max_words = this.typing_words.length;
     }
 
