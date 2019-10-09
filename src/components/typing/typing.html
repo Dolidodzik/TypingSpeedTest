@@ -28,11 +28,10 @@
     class="col-12 col-md-10 col-lg-8 col-xl-6 input"
     v-model="current_user_text"
     v-on:keyup="TextOnchange"
-    v-bind:style= "[is_current_input_correct ? {'color': 'inherit'} : {'color': 'red'}],
-    [is_typing_finished ? {'border-color': '#c91d12'} : {'background-color': 'inherit'}]"
+    v-bind:style= "[is_current_input_correct ? {'color': 'inherit'} : {'color': 'red'}, is_typing_finished ? {'border-color': '#c91d12'} : {'background-color': 'inherit'}]"
     :disabled="is_typing_finished == 1"
   />
-
+  {{is_current_input_correct}}
 
   <div class="timer"> {{ typing_time-typed_seconds }} </div>
 

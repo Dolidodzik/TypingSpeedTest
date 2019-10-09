@@ -176,6 +176,8 @@ export default {
         }
       }
 
+      console.log(this.is_current_input_correct)
+
     },
 
     /* If typing is started every second change timer number, and stop typing when time is gone */
