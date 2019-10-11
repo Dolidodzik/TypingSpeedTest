@@ -8,7 +8,7 @@ export default {
       settings:{
 
         /* Defult values */
-        number_of_words: 10,
+        number_of_words: 120,
         number_of_seconds: 60,
 
       }
