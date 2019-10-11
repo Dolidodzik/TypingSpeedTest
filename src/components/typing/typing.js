@@ -92,7 +92,7 @@ export default {
     /* When settings form is submitted lets generate word list with given settings, and set time to given  */
     this.$root.$on('settings-submit', data => {
      this.number_of_words =  data.number_of_words;
-     this.typing_time = 15;
+     this.typing_time = data.number_of_seconds;
      this.is_typing_finished = false;
      this.typed_seconds = 0;
      this.create_typing_words(data.number_of_words);
@@ -217,7 +217,7 @@ export default {
           this.typing_words[i] = this.words[number_index]; */
 
         /* Npm library solution (https://www.npmjs.com/package/random-words) */
-        this.typing_words = radnomWords(50)
+        this.typing_words = radnomWords(number_of_words)
       }
       this.typing_words_left = this.typing_words;
 

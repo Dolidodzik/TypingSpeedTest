@@ -2,7 +2,7 @@
 
 
   <span v-if="typing_finished_at_least_once">
-      {{this.correctly_typed_words}}
+
      <header class="end-screen-header col-12"> Your typing results: </header>
 
      <div class="stat col-12"> WPM (Words/Minute): {{ Math.round(this.ssdata.typed_words / this.ssdata.typed_in * 60) }} </div>
