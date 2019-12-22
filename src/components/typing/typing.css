@@ -1,4 +1,3 @@
-
 .text{
   background-color: #131313;
   border: none;
@@ -59,8 +58,6 @@
   cursor: pointer;
 }
 
-
-/* For sm */
 @media only screen and (min-width: 576px) {
   .text{
     height: 130px;
@@ -73,12 +70,6 @@
   }
 }
 
-/* For md */
-@media only screen and (min-width: 768px) and (max-width: 992px) {
- /* I guess theres nothing to change here at this moment */
-}
-
-/* For lg */
 @media only screen and (min-width: 992px){
   .text{
     font-size: 24px;

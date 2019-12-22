@@ -8,15 +8,12 @@
   <div class="col-10 col-sm-8 col-md-6 col-xl-4 mt-4 settings-inputs">
 
     <div class="col-12 mb-2 input-header"> Typing time (in seconds): </div>
-    <input type="text" class="col-12 input" value = "60"
+    <input type="number" class="col-12 input" value = "60"
          min="1" max="9999" v-model="settings.number_of_seconds" />
 
     <div class="col-12 mb-2 mt-5 input-header"> Number of words: </div>
-      <input type="text" class="col-12 input" value="10"
+      <input type="number" class="col-12 input" value="10"
           min="10" max="9999" v-model="settings.number_of_words" />
-
-    <!--<div class="col-12 mb-2 mt-5"> Or your own custom text (if empty, random words will be choosen): </div>
-      <textarea name="name" rows="8" cols="80" class="col-12 input" v-model="custom_text"></textarea>-->
 
     <input type="submit" value="Start typing!" class="input submit mt-5"
       v-on:click="scroll_to_typing()" v-scroll-to="'#typing'" />

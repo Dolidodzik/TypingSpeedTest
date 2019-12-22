@@ -30,7 +30,6 @@
   background-color: inherit;
 }
 
-/* For sm */
 @media only screen and (min-width: 576px) {
   .settings {
     padding-bottom: 250px;
@@ -41,7 +40,6 @@
   }
 }
 
-/* For md */
 @media only screen and (min-width: 768px) and (max-width: 992px) {
   .settings {
     padding-bottom: 300px;
@@ -54,7 +52,6 @@
   }
 }
 
-/* For lg */
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   .settings {
     padding-bottom: 350px;

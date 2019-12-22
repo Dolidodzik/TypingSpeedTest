@@ -35,6 +35,5 @@ body {
   color: #ccc !important;
   background-color: #1a1a1a !important;
   font-family: 'Heebo', sans-serif !important;
-  padding-bottom: 1150px;
 }
 </style>
