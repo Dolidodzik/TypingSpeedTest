@@ -55,7 +55,6 @@ export default {
       },1000);
     })
 
-    /* When settings form is submitted lets generate word list with given settings, and set time to given  */
     this.$root.$on('settings-submit', data => {
       this.init_typing(data)
     });
