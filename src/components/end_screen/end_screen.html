@@ -5,10 +5,10 @@
 
      <header class="end-screen-header col-12"> Your typing results: </header>
 
-     <div class="stat col-12"> WPM (Words/Minute): {{ Math.round(this.ssdata.typed_words / this.ssdata.typed_in * 60) }} </div>
+     <div class="stat col-12"> WPM (Words/Minute): {{ Math.round( this.correctly_typed_words / this.ssdata.typed_in * 60) }} </div>
      <div class="stat col-12"> Accuracy: {{ Math.round ( this.correctly_typed_words / this.ssdata.typed_words * 100 ) }}% </div>
      <div class="stat col-12"> Total typed words: {{ this.ssdata.typed_words }} </div>
-     <div class="stat col-12"> Incorrectly typed words: {{ this.ssdata.incorrectly_typed_words }} </div>
+     <div class="stat col-12"> Correctly typed words: {{ this.correctly_typed_words }} </div>
      <div class="stat col-12"> Key presses: {{ this.ssdata.actions }} </div>
      <div class="stat col-12"> Backspace presses: {{ this.ssdata.backspaces_pressed }} </div>
 

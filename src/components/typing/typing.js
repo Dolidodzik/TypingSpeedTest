@@ -34,7 +34,6 @@ export default {
         /* just a copy of this.typing_words */
         typing_words_list: 0,
       }
-
     }
   },
   computed: {
@@ -62,7 +61,9 @@ export default {
   },
   methods: {
 
+    /* Function that inits or re-inits typing */
     init_typing: function(data){
+      this.current_user_text = "";
       this.number_of_words =  data.number_of_words;
       this.typing_time = data.number_of_seconds;
       this.is_typing_finished = false;

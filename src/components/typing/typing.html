@@ -8,8 +8,7 @@
 
 
   <div name="name" class="col-12 text"
-    v-bind:style= "[is_typing_finished ? {'border-color': '#c91d12'} : {'background-color': 'inherit'}]"
-  >
+    v-bind:style= "[is_typing_finished ? {'border-color': '#c91d12'} : {'background-color': 'inherit'}]" >
     <span v-for="(word, index) in typing_words_left">
 
       <span v-if="index == 0" style="font-weight: 700; text-decoration: underline;">
@@ -31,7 +30,6 @@
     v-bind:style= "[is_current_input_correct ? {'color': 'inherit'} : {'color': 'red'}, is_typing_finished ? {'border-color': '#c91d12'} : {'background-color': 'inherit'}]"
     :disabled="is_typing_finished == 1"
   />
-
 
   <div class="timer"> {{ typing_time-typed_seconds }} </div>
 
