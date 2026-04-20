@@ -1,0 +1,95 @@
+PARAGRAPH_TEXT: Aplikacja Typing Speed Test służy do sprawdzania szybkości i dokładności pisania na klawiaturze.
+Po wejściu na stronę zobaczysz najpierw sekcję ustawień, potem sekcję testu pisania i na końcu sekcję wyników.
+Standardowy cel użytkownika to ustawienie czasu i liczby słów, wykonanie testu oraz analiza statystyk po zakończeniu.
+PARAGRAPH_KEYWORDS: aplikacja, typing speed test, cel aplikacji, test pisania
+PARAGRAPH_FEATURE_FLAGS: {"module_1": true}
+PARAGRAPH_TYPE: FAQ
+PARAGRAPH_PERMISSIONS_LEVEL: 9
+
+PARAGRAPH_TEXT: W sekcji Settings możesz skonfigurować test przed startem.
+Pole "Typing time (in seconds)" określa, ile sekund potrwa sesja pisania.
+Pole "Number of words" określa długość listy słów, które będą wyświetlane podczas testu.
+PARAGRAPH_KEYWORDS: settings, konfiguracja, typing time, number of words, ustawienia testu
+PARAGRAPH_FEATURE_FLAGS: {"module_1": true}
+PARAGRAPH_TYPE: FAQ
+PARAGRAPH_PERMISSIONS_LEVEL: 9
+
+PARAGRAPH_TEXT: Aby rozpocząć test, kliknij przycisk "Start typing!" w sekcji ustawień.
+Kliknięcie przycisku zapisuje bieżące ustawienia i automatycznie przewija widok do sekcji Typing.
+Od tego momentu możesz od razu zacząć wpisywać tekst w polu wejściowym.
+PARAGRAPH_KEYWORDS: start typing, rozpoczęcie testu, przycisk start, nawigacja do typing
+PARAGRAPH_FEATURE_FLAGS: {"module_1": true}
+PARAGRAPH_TYPE: FAQ
+PARAGRAPH_PERMISSIONS_LEVEL: 9
+
+PARAGRAPH_TEXT: W sekcji Typing zobaczysz listę słów do przepisania w kolejności.
+Aktualne słowo jest wyróżnione, aby łatwo było śledzić postęp.
+Pod listą znajduje się pole "Type below", w którym wpisujesz tekst i przechodzisz dalej spacją.
+PARAGRAPH_KEYWORDS: typing, lista słów, aktualne słowo, pole type below, przepisywanie
+PARAGRAPH_FEATURE_FLAGS: {"module_1": true}
+PARAGRAPH_TYPE: FAQ
+PARAGRAPH_PERMISSIONS_LEVEL: 9
+
+PARAGRAPH_TEXT: Test zaczyna odliczać czas dopiero od pierwszej aktywności użytkownika w polu tekstowym.
+Dzięki temu możesz spokojnie ustawić fokus i rozpocząć pisanie we własnym tempie.
+Po rozpoczęciu każda sekunda jest liczona aż do wyczerpania limitu albo końca listy słów.
+PARAGRAPH_KEYWORDS: timer, odliczanie czasu, start licznika, pierwsze wpisanie
+PARAGRAPH_FEATURE_FLAGS: {"module_1": true}
+PARAGRAPH_TYPE: FAQ
+PARAGRAPH_PERMISSIONS_LEVEL: 9
+
+PARAGRAPH_TEXT: Aplikacja na bieżąco sygnalizuje poprawność wpisywanego fragmentu słowa.
+Jeżeli aktualny wpis nie zgadza się z oczekiwanym początkiem słowa, tekst wejściowy zmieni kolor na czerwony.
+To podpowiada użytkownikowi, że warto skorygować literówki przed przejściem do kolejnego słowa.
+PARAGRAPH_KEYWORDS: poprawność wpisu, czerwony tekst, literówki, walidacja pisania
+PARAGRAPH_FEATURE_FLAGS: {"module_1": true}
+PARAGRAPH_TYPE: FAQ
+PARAGRAPH_PERMISSIONS_LEVEL: 9
+
+PARAGRAPH_TEXT: Test kończy się automatycznie w dwóch przypadkach.
+Pierwszy przypadek to upłynięcie ustawionego limitu czasu.
+Drugi przypadek to zakończenie całej puli słów przed końcem czasu.
+PARAGRAPH_KEYWORDS: zakończenie testu, koniec czasu, koniec listy słów, finish
+PARAGRAPH_FEATURE_FLAGS: {"module_1": true}
+PARAGRAPH_TYPE: FAQ
+PARAGRAPH_PERMISSIONS_LEVEL: 9
+
+PARAGRAPH_TEXT: W trakcie i po teście możesz użyć linku "Take me to results! (If you finished typing)".
+Link przewija stronę do sekcji wyników, gdzie dostępne są obliczone statystyki.
+Jeśli test nie jest jeszcze zakończony, sekcja wyników pokaże komunikat z prośbą o dokończenie pisania.
+PARAGRAPH_KEYWORDS: take me to results, przejście do wyników, sekcja wyników, komunikat
+PARAGRAPH_FEATURE_FLAGS: {"module_1": true}
+PARAGRAPH_TYPE: FAQ
+PARAGRAPH_PERMISSIONS_LEVEL: 9
+
+PARAGRAPH_TEXT: Po zakończeniu testu sekcja End screen wyświetla metryki wydajności.
+Zobaczysz między innymi WPM, Accuracy, total typed words, correctly typed words, key presses i backspace presses.
+Te dane pomagają ocenić zarówno szybkość pisania, jak i jakość wpisywanego tekstu.
+PARAGRAPH_KEYWORDS: end screen, statystyki, wpm, accuracy, key presses, backspace
+PARAGRAPH_FEATURE_FLAGS: {"module_1": true}
+PARAGRAPH_TYPE: FAQ
+PARAGRAPH_PERMISSIONS_LEVEL: 9
+
+PARAGRAPH_TEXT: WPM jest liczone na podstawie liczby poprawnie wpisanych słów oraz realnego czasu pisania.
+Accuracy jest liczone procentowo jako udział poprawnie wpisanych słów wśród wszystkich wpisanych.
+Dlatego szybkie pisanie z wieloma błędami może obniżyć wynik dokładności, nawet przy wysokim tempie.
+PARAGRAPH_KEYWORDS: jak liczone wpm, jak liczone accuracy, poprawne słowa, metryki
+PARAGRAPH_FEATURE_FLAGS: {"module_1": true}
+PARAGRAPH_TYPE: FAQ
+PARAGRAPH_PERMISSIONS_LEVEL: 9
+
+PARAGRAPH_TEXT: Sekcja wyników zawiera także podsumowanie kontekstu testu.
+Aplikacja pokazuje, ile słów było przygotowanych i ile użytkownik faktycznie zdążył wpisać.
+Dodatkowo pokazuje porównanie dostępnego czasu do rzeczywistego czasu pisania.
+PARAGRAPH_KEYWORDS: podsumowanie testu, liczba słów, czas pisania, kontekst wyniku
+PARAGRAPH_FEATURE_FLAGS: {"module_1": true}
+PARAGRAPH_TYPE: FAQ
+PARAGRAPH_PERMISSIONS_LEVEL: 9
+
+PARAGRAPH_TEXT: Aby wykonać kolejny test z inną konfiguracją, użyj linku "Take me back to settings!".
+Link przewija widok z sekcji wyników z powrotem do ustawień.
+Następnie możesz zmienić parametry i ponownie kliknąć "Start typing!", aby rozpocząć nową sesję.
+PARAGRAPH_KEYWORDS: take me back to settings, nowa sesja, ponowny test, zmiana konfiguracji
+PARAGRAPH_FEATURE_FLAGS: {"module_1": true}
+PARAGRAPH_TYPE: FAQ
+PARAGRAPH_PERMISSIONS_LEVEL: 9
